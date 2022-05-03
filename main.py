@@ -31,9 +31,20 @@ for i in range(len(firstName)):
     result = db.users.insert_one(users)
 
 print("User data added to the collection")
+
 # CRUD operations
+
+# READ
+# def read_db(db):
+read = db.users.find({"firstName":"jay"})
+for items in read:
+    print(items['_id'])
+
+
+
 
 
 # Disconnect from mongodb
 client.close()
 print("Connection to mongoDb Disconnected")
+
